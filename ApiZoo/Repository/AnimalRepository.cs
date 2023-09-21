@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using ZooAPI.Data;
 using ZooAPI.Models;
 
@@ -6,10 +7,13 @@ namespace ApiZoo.Repository
 {
     public class AnimalRepository : IRepository<Animal>
     {
-        ApplicationDbContext _db;
-        public AnimalRepository(ApplicationDbContext db)
+       private readonly ApplicationDbContext _db;
+        private readonly IMapper _mapper;
+
+        public AnimalRepository(ApplicationDbContext db, IMapper mapper)
         {
             _db = db;
+            _mapper = mapper;
         }
 
         public async Task<bool> Create(Animal entity)
@@ -44,7 +48,7 @@ namespace ApiZoo.Repository
         public async Task<List<Animal>> GetAll()
         {
             return await _db.Animals.ToListAsync();
-        }
+        }   
 
         public async Task<Animal> Update(int id, Animal entity)
         {

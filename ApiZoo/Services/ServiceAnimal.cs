@@ -33,6 +33,13 @@ namespace ApiZoo.Services
             return animalsFromSpecie;
         }
 
+        public async Task<List<Specie>> GetAllAnimalsFromSpecies()
+        {
+            var animalsFromSpecies = await _db.Species.Include(a => a.Animals).
+                ToListAsync();  
+            return animalsFromSpecies;
+        }
+
         public async Task<List<Animal>> SearchAnimals(string input)
         {
             var animal = await _db.Animals.Where(a => a.Name.StartsWith(input)).ToListAsync();  

@@ -46,6 +46,11 @@ namespace ApiZoo.Repository
             return await _db.Species.ToListAsync();
         }
 
+        public Task<object> GetAllAnimals()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Specie> Update(int id, Specie entity)
         {
             var specie = await _db.Species.FindAsync(id);

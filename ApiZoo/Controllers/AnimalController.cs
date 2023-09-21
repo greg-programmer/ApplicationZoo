@@ -21,10 +21,16 @@ namespace ApiZoo.Controllers
         [HttpGet("Animals")]
         public async Task<IActionResult> Index()
         {
-           return Ok(await _animalRepository.GetAll());
+            return Ok(await _animalRepository.GetAll());
         }
 
-        [HttpGet("Animal-Specie/{idSpecie}")]
+        [HttpGet("Animals-Species")]
+        public async Task<IActionResult> GetAllAnimalsFromSpecies()
+        {
+            return Ok(await _animalService.GetAllAnimalsFromSpecies());
+        }
+
+        [HttpGet("Animals-Specie/{idSpecie}")]
         public async Task<IActionResult> GetAllAnimalsFromSpecie(int idSpecie)
         {
             return Ok(await _animalService.GetAllAnimalsFromSpecie(idSpecie));
@@ -46,7 +52,7 @@ namespace ApiZoo.Controllers
             return Ok(await _animalRepository.Create(animal));
         }
 
-        [HttpPut("Animal/{idAnimal}]")]
+        [HttpPut("Animal/{idAnimal}")]
         public async Task<IActionResult> Update(Animal animal, int idAnimal)
         {
            return Ok(await _animalRepository.Update(idAnimal, animal));
