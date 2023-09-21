@@ -1,5 +1,8 @@
+using ApiZoo.Repository;
+using ApiZoo.Services;
 using Microsoft.EntityFrameworkCore;
 using ZooAPI.Data;
+using ZooAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +14,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 string connectionstring = builder.Configuration.GetConnectionString("DefaultConnectionString");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionstring));
+builder.Services.AddScoped<IRepository<Animal>, AnimalRepository>();
+builder.Services.AddScoped<IRepository<Specie>, SpecieRepository>();
+builder.Services.AddScoped<IServiceAnimal, ServiceAnimal>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
