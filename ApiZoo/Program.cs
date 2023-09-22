@@ -2,6 +2,7 @@ using ApiZoo.Repository;
 using ApiZoo.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+<<<<<<< HEAD
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Claims;
@@ -9,6 +10,9 @@ using System.Text;
 using System.Text.Json.Serialization;
 using ZooAPI.Data;
 using ZooAPI.Models;
+=======
+using ZooLibrary.Data;
+>>>>>>> front
 
 var builder = WebApplication.CreateBuilder(args);
 

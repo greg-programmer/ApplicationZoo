@@ -1,0 +1,27 @@
+@page "/Zoo"
+
+
+<h3>Zoo</h3>
+
+<div class="container">
+    <div class="d-flex flex-row flex-wrap">
+        @foreach (var an in AnimalList)
+        {
+            <div class="col-3">
+                <div class="card mt-5 h-500" style="width: 18rem;">
+                    <img class="card-img-top" src="@an.ImagePath" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: @an.Name</h5>
+                        <p class="card-text">Specie: @Race[an.SpecieId]</p>
+                        <a @onclick="ShowDesc" class="btn btn-primary">Go somewhere</a>
+                        @if (Description)
+                        {
+                            <p>@an.Description</p>
+                            <button class="btn btn-primary" @onclick="CloseDesc">Close</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

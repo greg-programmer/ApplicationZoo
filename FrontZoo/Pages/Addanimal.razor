@@ -1,0 +1,59 @@
+@page "/Addanimal"
+
+<h3>Addanimal</h3>
+
+<EditForm animal="animal" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator/>
+
+    <div class="row">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name :</label>
+                <InputText class="form-control" id="name" @bind-Value="animal.Name"/>
+                <small>
+                    <ValidationMessage For="() => animal.Name"/>
+                </small>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="mb-3">
+                
+                    <label for="age">Prix (entier)</label>
+                    <InputNumber class="form-control" id="age" placeholder="Saisir l'age" @bind-Value="animal.Age"/>
+                    <small>
+                        <ValidationMessage For="() => this.animal.Age"/>
+                    </small>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="description" class="form-label">Information</label>
+                <InputText class="form-control" id="description" @bind-Value="animal.Description"/>
+                <small>
+                    <ValidationMessage For="() => animal.Description"/>
+                </small>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="specie" class="form-label">Specie</label>
+                <InputSelect class="form-control" id="specie" @bind-Value="animal.Specie"/>
+                <small>
+                    <ValidationMessage For="() => animal.Specie"/>
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div>
+        <ValidationSummary/>
+    </div>
+</EditForm>

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ZooAPI.Models
+namespace ZooLibrary.Models
 {
     public class User
     {

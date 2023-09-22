@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using ZooLibrary.Models;
 
-namespace ZooAPI.Models
-{
-    public class Animal
+
+public class Animal
     {
          public int Id { get; set; }
         [Required(ErrorMessage ="Le champ est obligatoire !")]
@@ -18,4 +18,4 @@ namespace ZooAPI.Models
         [JsonIgnore]
         public Specie? Specie { get; set; }
     }
-}
+

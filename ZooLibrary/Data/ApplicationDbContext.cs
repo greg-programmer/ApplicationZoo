@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ZooAPI.Models;
+using ZooLibrary.Models;
 
-namespace ZooAPI.Data
+namespace ZooLibrary.Data
 {
     public class ApplicationDbContext : DbContext
     {
