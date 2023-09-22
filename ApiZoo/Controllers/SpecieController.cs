@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
-using ZooAPI.Models;
+using ZooLibrary.Models;
 
 namespace ApiZoo.Controllers
 {

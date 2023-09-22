@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ZooAPI.Models;
+using ZooLibrary.Models;
 
 namespace ApiZoo.Helpers
 {

@@ -2,17 +2,14 @@ using ApiZoo.Repository;
 using ApiZoo.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-<<<<<<< HEAD
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
-using ZooAPI.Data;
-using ZooAPI.Models;
-=======
 using ZooLibrary.Data;
->>>>>>> front
+using ZooLibrary.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,7 +47,7 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
-// on récupère la clé et on l'encode
+// on rï¿½cupï¿½re la clï¿½ et on l'encode
 var key = Encoding.ASCII.GetBytes("this is my custom Secret key for authentication");
 // Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -59,14 +56,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         options.SaveToken = true;
         options.TokenValidationParameters = new TokenValidationParameters()
         {
-            ValidateIssuerSigningKey = true, // utilisation d'une clé cryptée pour la sécurité du token
-            IssuerSigningKey = new SymmetricSecurityKey(key), // clé cryptée en elle même
-            ValidateLifetime = true, // vérification du temps d'expiration du Token
-            ValidateAudience = true, // vérification de l'audience du token
+            ValidateIssuerSigningKey = true, // utilisation d'une clï¿½ cryptï¿½e pour la sï¿½curitï¿½ du token
+            IssuerSigningKey = new SymmetricSecurityKey(key), // clï¿½ cryptï¿½e en elle mï¿½me
+            ValidateLifetime = true, // vï¿½rification du temps d'expiration du Token
+            ValidateAudience = true, // vï¿½rification de l'audience du token
             ValidAudience = "http",
-            ValidateIssuer = true, // vérification du donneur du token
+            ValidateIssuer = true, // vï¿½rification du donneur du token
             ValidIssuer = "zoo", // le donneur
-            ClockSkew = TimeSpan.Zero // décallage possible de l'expiration du token
+            ClockSkew = TimeSpan.Zero // dï¿½callage possible de l'expiration du token
         };
     });
 
@@ -79,9 +76,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //    options.AddPolicy("User", policy =>
 //    {
 //        policy.RequireClaim(ClaimTypes.Role, "User");
-//        //ClaimTypes nous permet d'avoir des valeur normalisées pour nos claims (prédéfinies par des conventions)
+//        //ClaimTypes nous permet d'avoir des valeur normalisï¿½es pour nos claims (prï¿½dï¿½finies par des conventions)
 //        //policy.RequireClaim("EstUnDresseurPokemon", "true"); 
-//        // on peut ajouter la vérification d'autres claims si nécessaire
+//        // on peut ajouter la vï¿½rification d'autres claims si nï¿½cessaire
 //    });
 //});
 string connectionstring = builder.Configuration.GetConnectionString("DefaultConnectionString");

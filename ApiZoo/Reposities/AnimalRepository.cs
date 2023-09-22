@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using ZooAPI.Data;
-using ZooAPI.Models;
+using ZooLibrary.Data;
+using ZooLibrary.Models;
 
 namespace ApiZoo.Repository
 {

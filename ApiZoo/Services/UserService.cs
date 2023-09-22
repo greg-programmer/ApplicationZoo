@@ -5,8 +5,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using ZooAPI.Data;
-using ZooAPI.Models;
+using ZooLibrary.Data;
+using ZooLibrary.Models;
 
 namespace ApiZoo.Services
 {
