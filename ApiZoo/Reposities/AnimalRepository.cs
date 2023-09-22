@@ -25,8 +25,8 @@ namespace ApiZoo.Repository
 
         public async Task<bool> Delete(int id)
         {
-            var animal = _db.Animals.FindAsync(id);
-            if (await animal == null)
+            var animal = await _db.Animals.FirstOrDefaultAsync(a => a.Id == id);
+            if (animal == null)
             {
                 return false;
             }
@@ -55,7 +55,7 @@ namespace ApiZoo.Repository
             var animal = await _db.Animals.FindAsync(id);
             if (animal == null)
             {
-                return new Animal();
+                return null;
             }
             entity.Id = id;
             if (entity.Name != animal.Name)
