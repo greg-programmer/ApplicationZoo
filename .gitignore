@@ -20,6 +20,9 @@
 # Mono auto generated files
 mono_crash.*
 
+# DS_store
+.DS_Store
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -462,6 +465,9 @@ atlassian-ide-plugin.xml
 
 # Cursive Clojure plugin
 .idea/replstate.xml
+
+# idea
+.idea
 
 # SonarLint plugin
 .idea/sonarlint/
