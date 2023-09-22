@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ZooAPI.Models
-{
+
     public class Specie
     {
         public int Id { get; set; }
@@ -9,4 +8,3 @@ namespace ZooAPI.Models
         public string ?Name { get; set; }
         public List<Animal>? Animals { get; set; }
     }
-}
