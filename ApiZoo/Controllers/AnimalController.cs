@@ -40,6 +40,13 @@ namespace ApiZoo.Controllers
         }
 
         [Authorize]
+        [HttpGet("search-Animals")]
+        public async Task<IActionResult> SearchAnimals(string input)
+        {
+            return Ok(await _animalService.SearchAnimals(input));
+        }
+
+        [Authorize]
         [HttpGet("Animal")]
         public async Task<IActionResult> GetById(int id)
         {
